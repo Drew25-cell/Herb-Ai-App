@@ -3,7 +3,7 @@ import openai
 import os
 
 # Get your OpenAI key from Streamlit secrets
-client = openai.OPENAI(api_key = os.getenv("OPENAI_API_KEY")
+client=openai.OPENAI(api_key=os.getenv("OPENAI_API_KEY")
 
 st.title("🌿 Herbal Ingredient Explainer")
 st.write("Ask about any herb or supplement!")
