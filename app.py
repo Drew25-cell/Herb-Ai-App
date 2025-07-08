@@ -3,7 +3,7 @@ import openai
 import os
 
 # Get your OpenAI key from Streamlit secrets
-openai.api_key = os.getenv("OPENAI_API_KEY")
+client = openai.OPENAI(api_key = os.getenv("OPENAI_API_KEY")
 
 st.title("🌿 Herbal Ingredient Explainer")
 st.write("Ask about any herb or supplement!")
@@ -17,7 +17,7 @@ if ingredient:
             You are a certified herbalist. Explain what {ingredient} is, how it is used, and any safety info. Avoid medical claims.
             Keep it under 150 words.
             """
-            response = openai.ChatCompletion.create(
+            response = client.Chat.completions.create(
                 model="gpt-3.5-turbo",
                 messages=[{"role": "user", "content": prompt}]
             )
