@@ -17,7 +17,7 @@ if ingredient:
             You are a certified herbalist. Explain what {ingredient} is, how it is used, and any safety info. Avoid medical claims.
             Keep it under 150 words.
             """
-            response = openai.ChatCompletion.create(
+            response = openai.Chat.Completion.create(
                 model="gpt-3.5-turbo",
                 messages=[{"role": "user", "content": prompt}]
             )
